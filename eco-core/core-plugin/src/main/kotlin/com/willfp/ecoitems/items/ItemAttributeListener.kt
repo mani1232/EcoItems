@@ -17,7 +17,7 @@ class ItemAttributeListener(private val plugin: EcoPlugin) : Listener {
         }
 
         apply(event.player)
-        plugin.scheduler.run{ apply(event.player) }
+        plugin.scheduler.run({ apply(event.player) }, event.player.location)
     }
 
     private fun apply(player: Player) {
